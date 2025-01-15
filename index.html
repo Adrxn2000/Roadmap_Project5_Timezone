@@ -6,25 +6,45 @@
     <title>Time Zone</title>
     
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/micromodal/dist/micromodal.min.css">
 </head>
-<body onload = "showTime()">
+<body>
+    <h1>Current Time</h1>
+   
     <div class="time-container">
-        <h1>Current Time</h1>
+        <div class="timezone-selector">
+            <button id="dropdown" class="timezone-button">
+                <i class="bi bi-pencil-square"></i>
+            </button>
+            <select id="timezone-select" onchange="updateSelectedTimezone()">
+                <option value="UTC">UTC</option>
+                <option value="America/New_York">America/New_York</option>
+                <option value="Europe/London">Europe/London</option>
+                <option value="Asia/Tokyo">Asia/Tokyo</option>
+                <option value="Africa/Johannesburg">Africa/Johannesburg</option>
+                <option value="Canada/Pacific">Canada/Pacific</option>
+
+            </select>
+        </div>
         <div class="date">
             <span id="day">Day</span> -
             <span id="month">Month</span> 
             <span id="daynum">00</span> -
             <span id="year">Year</span>
         </div>
-        <div class="time" >
+        <div class="time">
             <span id="hour">00</span>:
             <span id="minute">00</span>:
             <span id="second">00</span>
             <span id="period">PM</span>
-
+        </div>
     </div>
    
-    
-    <script src="Script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dayjs/dayjs.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dayjs/plugin/utc.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dayjs/plugin/timezone.js"></script>
+    <script src="Script.js" type="module"></script>
+    <script src="https://unpkg.com/micromodal/dist/micromodal.min.js"></script>
 </body>
 </html>
