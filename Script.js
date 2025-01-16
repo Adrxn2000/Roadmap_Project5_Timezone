@@ -2,6 +2,29 @@
 // import dayjs from "dayjs";
 // import utc from "dayjs/plugin/utc.js";
 // import timezone from "dayjs/plugin/timezone.js";
+// import micromodal from "https://cdn.
+
+// const { default: MicroModal } = require("micromodal");
+
+// MicroModal.init({
+//     disableScroll: true,
+//     awaitCloseAnimation: true
+// });
+MicroModal.init();
+
+
+
+// document.addEventListener("DOMContentLoaded", function() {
+  
+//     try {
+      
+      
+//     } catch (e) {
+//       console.log("micromodal error: ", e);
+//     }
+    
+//   });
+  
 dayjs.extend(window.dayjs_plugin_utc);  
 dayjs.extend(window.dayjs_plugin_timezone); 
 
@@ -39,18 +62,7 @@ function updateTime(timezone) {
 updateTime(); // Default timezone is UTC
 setInterval( () => updateTime() , 1);
 
-
-
-
-
-
-
-
-
-
-
-
-
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 /*function updateClock(){
     var now = new Date();
     var dname = now.getDay(),

@@ -13,19 +13,34 @@
     <h1>Current Time</h1>
    
     <div class="time-container">
-        <div class="timezone-selector">
-            <button id="dropdown" class="timezone-button">
-                <i class="bi bi-pencil-square"></i>
-            </button>
-            <select id="timezone-select" onchange="updateSelectedTimezone()">
-                <option value="UTC">UTC</option>
-                <option value="America/New_York">America/New_York</option>
-                <option value="Europe/London">Europe/London</option>
-                <option value="Asia/Tokyo">Asia/Tokyo</option>
-                <option value="Africa/Johannesburg">Africa/Johannesburg</option>
-                <option value="Canada/Pacific">Canada/Pacific</option>
+        <button id="dropdown" class="timezone-button" data-micromodal-trigger="modal-1">
+            <i class="bi bi-pencil-square"></i>
+        </button>
+        <div class="timezone-selector modal" id="modal-1" aria-hidden="true" >
+            <div class="modal__overlay" tabindex="-1" data-micromodal-close>
+                
+                <div class ="modal_container" role="dialog" aria-modal="true" aria-labelledby="modal-1-title">
+                    <header class="modal__header">
+                        <h2 id="modal-1-title">  Select Timezone</h2>
+                        
+                 <button class ="modal_close" aria-label="Close modal" data-micromodal-close> </button> 
 
-            </select>
+                      </header>
+                    <main class="modal__content" id="modal-1-content">
+                        <select id="timezone-select" onchange="updateSelectedTimezone()" aria-label="Close modal" >
+                            <option value="UTC" >UTC</option>
+                            <option value="America/New_York">America/New_York</option>
+                            <option value="Europe/London">Europe/London</option>
+                            <option value="Asia/Tokyo">Asia/Tokyo</option>
+                            <option value="Africa/Johannesburg">Africa/Johannesburg</option>
+                            <option value="Canada/Pacific">Canada/Pacific</option>
+                        </select>
+                     </main>
+                     <footer class="modal_footer">
+                        <button class="modal_close" data-micromodal-close>Close</button>
+                    </footer>
+                </div>
+            </div>
         </div>
         <div class="date">
             <span id="day">Day</span> -
@@ -44,7 +59,7 @@
     <script src="https://cdn.jsdelivr.net/npm/dayjs/dayjs.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/dayjs/plugin/utc.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/dayjs/plugin/timezone.js"></script>
-    <script src="Script.js" type="module"></script>
     <script src="https://unpkg.com/micromodal/dist/micromodal.min.js"></script>
+    <script src="Script.js" type="module"></script>
 </body>
 </html>
